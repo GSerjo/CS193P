@@ -12,6 +12,8 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var display: UILabel!
     private var userIsInTheMiddleOfTypingANumber = false
+    private var operandStack = [Double]()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,8 +34,58 @@ class ViewController: UIViewController {
             display.text = digit
             userIsInTheMiddleOfTypingANumber = true
         }
+    }
+    
+    
+    @IBAction func enter() {
+        userIsInTheMiddleOfTypingANumber = false
+        operandStack.append(displayValue)
+        print(operandStack)
+    }
+    
+    @IBAction func operate(sender: UIButton) {
+        if userIsInTheMiddleOfTypingANumber {
+            enter()
+        }
+        let operation = sender.currentTitle!
+        switch operation{
+        case "÷": performOperation{ $0 / $1 }
+        case "×": performOperation{ $0 * $1 }
+        case "+": performOperation{ $0 + $1 }
+        case "−": performOperation{ $0 - $1 }
+        case "√": performOperation{ sqrt($01) }
+        default:
+            break
+        }
         
     }
-
+    
+    private func performOperation(operation: Double -> Double){
+        if operandStack.count < 1{
+            return
+        }
+        
+        displayValue = operation(operandStack.removeLast())
+        enter()
+    }
+    
+    private func performOperation(operation: (Double, Double) -> Double){
+        if operandStack.count < 2{
+            return
+        }
+        
+        displayValue = operation(operandStack.removeLast(), operandStack.removeLast())
+        enter()
+    }
+    
+    var displayValue: Double{
+        get{
+            return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
+        }
+        set{
+            display.text = "\(newValue)"
+            userIsInTheMiddleOfTypingANumber = false
+        }
+    }
 }
 
