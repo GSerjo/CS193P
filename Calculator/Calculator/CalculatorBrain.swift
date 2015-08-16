@@ -52,6 +52,11 @@ class CalculatorBrain {
         learnOp(Op.Constant("π") { M_PI })
     }
     
+    var displayStack: String {
+        get {
+            return " ".join(opStack.map{"\($0)"})
+        }
+    }
     
     func pushOperand(operand: Double) -> Double? {
         opStack.append(Op.Operand(operand))
