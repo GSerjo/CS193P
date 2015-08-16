@@ -46,11 +46,6 @@ class CalculatorBrain {
         learnOp(Op.UnaryOperation("√", sqrt))
     }
     
-    func evaluate() -> Double? {
-        let (result, remainder) = evaluate(opStack)
-        print("\(opStack) = \(result) with \(remainder) left over")
-        return result
-    }
     
     func pushOperand(operand: Double) -> Double? {
         opStack.append(Op.Operand(operand))
@@ -64,26 +59,35 @@ class CalculatorBrain {
         return evaluate()
     }
     
+    private func evaluate() -> Double? {
+        let (result, remainder) = evaluate(opStack)
+        print("\(opStack) = \(result) with \(remainder) left over")
+        return result
+    }
+    
     private func evaluate(ops: [Op]) -> (result: Double?, remainingOps: [Op]) {
         
-        if ops.isEmpty == false {
-            var remainingOps = ops
-            let op = remainingOps.removeLast()
-            switch op {
-            case .Operand(let operand):
-                return (operand, remainingOps)
-            case .BinaryOperation(_, let operation):
-                let op1Evaluation = evaluate(remainingOps)
-                if let operand1 = op1Evaluation.result {
-                    let op2Evaluation = evaluate(op1Evaluation.remainingOps)
-                    if let operand2 = op2Evaluation.result {
-                        return (operation(operand1, operand2), op2Evaluation.remainingOps)
-                    }
-                }
-            case .UnaryOperation(_, let operation):
-                let opEvaluation = evaluate(remainingOps)
-                if let operand = opEvaluation.result {
-                    return (operation(operand), opEvaluation.remainingOps)
+        if ops.isEmpty {
+            return (nil, ops)
+        }
+        
+        var remainigOps = ops
+        let op = remainigOps.removeLast()
+        
+        switch op {
+        case .Operand(let operand):
+            return (operand, remainigOps)
+        case .UnaryOperation(_, let operation):
+            let evaluation = evaluate(remainigOps)
+            if let operand = evaluation.result {
+                return (operation(operand), remainigOps)
+            }
+        case .BinaryOperation(_, let operation):
+            let evaluation1 = evaluate(remainigOps)
+            if let operand1 = evaluation1.result {
+                let evaluation2 = evaluate(evaluation1.remainingOps)
+                if let operand2 = evaluation2.result {
+                    return (operation(operand1, operand2), evaluation2.remainingOps)
                 }
             }
         }
