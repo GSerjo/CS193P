@@ -34,11 +34,19 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O42-Rh-iDm">
-                                <rect key="frame" x="208" y="428" width="80" height="80"/>
+                                <rect key="frame" x="196" y="428" width="80" height="80"/>
                                 <animations/>
                                 <state key="normal" title="C"/>
                                 <connections>
                                     <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Uwx-HV-bmi"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21b-Uf-Aa9">
+                                <rect key="frame" x="284" y="428" width="80" height="80"/>
+                                <animations/>
+                                <state key="normal" title="C"/>
+                                <connections>
+                                    <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="7MR-04-w4e"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lT-Cw-F7m">
@@ -50,7 +58,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5w-vz-t5W">
-                                <rect key="frame" x="208" y="70" width="80" height="80"/>
+                                <rect key="frame" x="196" y="70" width="80" height="80"/>
                                 <animations/>
                                 <state key="normal" title="9"/>
                                 <connections>
@@ -74,7 +82,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvD-bq-fOU">
-                                <rect key="frame" x="208" y="158" width="80" height="80"/>
+                                <rect key="frame" x="196" y="158" width="80" height="80"/>
                                 <animations/>
                                 <state key="normal" title="6"/>
                                 <connections>
@@ -114,7 +122,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOl-JQ-Trc">
-                                <rect key="frame" x="208" y="340" width="80" height="80"/>
+                                <rect key="frame" x="196" y="340" width="80" height="80"/>
                                 <animations/>
                                 <state key="normal" title="↵"/>
                                 <connections>
@@ -122,7 +130,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2NL-gJ-VdL">
-                                <rect key="frame" x="208" y="252" width="80" height="80"/>
+                                <rect key="frame" x="196" y="252" width="80" height="80"/>
                                 <animations/>
                                 <state key="normal" title="3"/>
                                 <connections>
@@ -130,7 +138,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ko0-SO-fES">
-                                <rect key="frame" x="291" y="70" width="80" height="80"/>
+                                <rect key="frame" x="284" y="70" width="80" height="80"/>
                                 <animations/>
                                 <state key="normal" title="×"/>
                                 <connections>
@@ -138,7 +146,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKa-Uh-Yjt">
-                                <rect key="frame" x="291" y="158" width="80" height="80"/>
+                                <rect key="frame" x="284" y="158" width="80" height="80"/>
                                 <animations/>
                                 <state key="normal" title="÷"/>
                                 <connections>
@@ -146,7 +154,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xy-uQ-OlB">
-                                <rect key="frame" x="291" y="340" width="80" height="80"/>
+                                <rect key="frame" x="284" y="340" width="80" height="80"/>
                                 <animations/>
                                 <state key="normal" title="−"/>
                                 <connections>
@@ -154,7 +162,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3a-vG-xLz">
-                                <rect key="frame" x="291" y="252" width="80" height="80"/>
+                                <rect key="frame" x="284" y="252" width="80" height="80"/>
                                 <animations/>
                                 <state key="normal" title="+"/>
                                 <connections>
@@ -162,7 +170,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rE-kw-dCu">
-                                <rect key="frame" x="379" y="70" width="80" height="80"/>
+                                <rect key="frame" x="372" y="70" width="80" height="80"/>
                                 <animations/>
                                 <state key="normal" title="sin"/>
                                 <connections>
@@ -170,7 +178,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXW-CI-AX8">
-                                <rect key="frame" x="379" y="158" width="80" height="80"/>
+                                <rect key="frame" x="372" y="158" width="80" height="80"/>
                                 <animations/>
                                 <state key="normal" title="cos"/>
                                 <connections>
@@ -178,7 +186,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cJ-oM-tQw">
-                                <rect key="frame" x="379" y="340" width="80" height="80"/>
+                                <rect key="frame" x="372" y="340" width="80" height="80"/>
                                 <animations/>
                                 <state key="normal" title="√"/>
                                 <connections>
@@ -186,11 +194,35 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DE-oE-qFq">
-                                <rect key="frame" x="379" y="252" width="80" height="80"/>
+                                <rect key="frame" x="372" y="252" width="80" height="80"/>
                                 <animations/>
                                 <state key="normal" title="π"/>
                                 <connections>
                                     <action selector="operate:" destination="BYZ-38-t0r" eventType="touchUpInside" id="q49-0j-fVv"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j39-VC-mal">
+                                <rect key="frame" x="372" y="428" width="80" height="80"/>
+                                <animations/>
+                                <state key="normal" title="C"/>
+                                <connections>
+                                    <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rnN-gI-C6T"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSs-R8-TUa">
+                                <rect key="frame" x="108" y="428" width="80" height="80"/>
+                                <animations/>
+                                <state key="normal" title="C"/>
+                                <connections>
+                                    <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="MKp-DJ-wT7"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CD4-1J-oGa">
+                                <rect key="frame" x="20" y="428" width="80" height="80"/>
+                                <animations/>
+                                <state key="normal" title="C"/>
+                                <connections>
+                                    <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="lS3-fv-5Y2"/>
                                 </connections>
                             </button>
                         </subviews>
