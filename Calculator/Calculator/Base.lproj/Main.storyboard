@@ -25,7 +25,7 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weK-gA-YjU">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" History" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="weK-gA-YjU">
                                 <rect key="frame" x="20" y="51" width="560" height="24"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
@@ -33,7 +33,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Va-Qz-XuZ">
-                                <rect key="frame" x="20" y="83" width="60" height="60"/>
+                                <rect key="frame" x="21" y="83" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="7"/>
                                 <connections>
@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="O42-Rh-iDm">
-                                <rect key="frame" x="241" y="341" width="60" height="60"/>
+                                <rect key="frame" x="157" y="341" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="C"/>
                                 <connections>
@@ -49,11 +49,11 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21b-Uf-Aa9">
-                                <rect key="frame" x="351" y="341" width="60" height="60"/>
+                                <rect key="frame" x="293" y="341" width="60" height="60"/>
                                 <animations/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lT-Cw-F7m">
-                                <rect key="frame" x="130" y="83" width="60" height="60"/>
+                                <rect key="frame" x="89" y="83" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="8"/>
                                 <connections>
@@ -61,7 +61,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N5w-vz-t5W">
-                                <rect key="frame" x="241" y="83" width="60" height="60"/>
+                                <rect key="frame" x="157" y="83" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="9"/>
                                 <connections>
@@ -69,7 +69,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7U0-wc-pgD">
-                                <rect key="frame" x="21" y="151" width="60" height="60"/>
+                                <rect key="frame" x="20" y="151" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="4"/>
                                 <connections>
@@ -77,7 +77,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2x-wA-rFH">
-                                <rect key="frame" x="131" y="151" width="60" height="60"/>
+                                <rect key="frame" x="89" y="151" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="5"/>
                                 <connections>
@@ -85,7 +85,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rvD-bq-fOU">
-                                <rect key="frame" x="242" y="151" width="60" height="60"/>
+                                <rect key="frame" x="157" y="151" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="6"/>
                                 <connections>
@@ -93,7 +93,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kLt-Mj-Bzb">
-                                <rect key="frame" x="20" y="205" width="60" height="60"/>
+                                <rect key="frame" x="20" y="219" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="1"/>
                                 <connections>
@@ -101,7 +101,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bTl-Lx-ZW0">
-                                <rect key="frame" x="130" y="205" width="60" height="60"/>
+                                <rect key="frame" x="89" y="219" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="2"/>
                                 <connections>
@@ -109,7 +109,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oKv-1E-Xa6">
-                                <rect key="frame" x="131" y="273" width="60" height="60"/>
+                                <rect key="frame" x="89" y="273" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="0"/>
                                 <connections>
@@ -117,7 +117,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vs-T7-M5h">
-                                <rect key="frame" x="21" y="273" width="60" height="60"/>
+                                <rect key="frame" x="20" y="273" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="."/>
                                 <connections>
@@ -125,7 +125,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOl-JQ-Trc">
-                                <rect key="frame" x="242" y="273" width="60" height="60"/>
+                                <rect key="frame" x="157" y="273" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="↵"/>
                                 <connections>
@@ -133,7 +133,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2NL-gJ-VdL">
-                                <rect key="frame" x="241" y="205" width="60" height="60"/>
+                                <rect key="frame" x="157" y="219" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="3"/>
                                 <connections>
@@ -141,7 +141,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ko0-SO-fES">
-                                <rect key="frame" x="351" y="83" width="60" height="60"/>
+                                <rect key="frame" x="225" y="83" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="×"/>
                                 <connections>
@@ -149,7 +149,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UKa-Uh-Yjt">
-                                <rect key="frame" x="352" y="151" width="60" height="60"/>
+                                <rect key="frame" x="225" y="151" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="÷"/>
                                 <connections>
@@ -157,7 +157,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7xy-uQ-OlB">
-                                <rect key="frame" x="352" y="273" width="60" height="60"/>
+                                <rect key="frame" x="225" y="273" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="−"/>
                                 <connections>
@@ -165,7 +165,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b3a-vG-xLz">
-                                <rect key="frame" x="351" y="205" width="60" height="60"/>
+                                <rect key="frame" x="225" y="219" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="+"/>
                                 <connections>
@@ -173,7 +173,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rE-kw-dCu">
-                                <rect key="frame" x="461" y="83" width="60" height="60"/>
+                                <rect key="frame" x="293" y="83" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="sin"/>
                                 <connections>
@@ -181,7 +181,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gXW-CI-AX8">
-                                <rect key="frame" x="462" y="151" width="60" height="60"/>
+                                <rect key="frame" x="293" y="151" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="cos"/>
                                 <connections>
@@ -189,7 +189,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7cJ-oM-tQw">
-                                <rect key="frame" x="462" y="273" width="60" height="60"/>
+                                <rect key="frame" x="293" y="273" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="√"/>
                                 <connections>
@@ -197,7 +197,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1DE-oE-qFq">
-                                <rect key="frame" x="461" y="205" width="60" height="60"/>
+                                <rect key="frame" x="293" y="219" width="60" height="60"/>
                                 <animations/>
                                 <state key="normal" title="π"/>
                                 <connections>
@@ -205,15 +205,15 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j39-VC-mal">
-                                <rect key="frame" x="461" y="341" width="60" height="60"/>
+                                <rect key="frame" x="225" y="341" width="60" height="60"/>
                                 <animations/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSs-R8-TUa">
-                                <rect key="frame" x="130" y="341" width="60" height="60"/>
+                                <rect key="frame" x="89" y="341" width="60" height="60"/>
                                 <animations/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CD4-1J-oGa">
-                                <rect key="frame" x="20" y="341" width="60" height="60"/>
+                                <rect key="frame" x="21" y="341" width="60" height="60"/>
                                 <animations/>
                             </button>
                         </subviews>
