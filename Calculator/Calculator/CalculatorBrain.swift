@@ -15,6 +15,7 @@ class CalculatorBrain {
     
     private enum Op: CustomStringConvertible {
         
+        case Constant(String, () -> Double)
         case Operand(Double)
         case UnaryOperation(String, Double -> Double)
         case BinaryOperation(String, (Double, Double) -> Double)
@@ -27,6 +28,8 @@ class CalculatorBrain {
                 case .UnaryOperation(let symbol, _):
                     return symbol
                 case .BinaryOperation(let symbol, _):
+                    return symbol
+                case .Constant(let symbol, _):
                     return symbol
                 }
             }
@@ -44,6 +47,9 @@ class CalculatorBrain {
         learnOp(Op.BinaryOperation("×", *))
         learnOp(Op.BinaryOperation("÷") { $1 / $0 })
         learnOp(Op.UnaryOperation("√", sqrt))
+        learnOp(Op.UnaryOperation("sin", sin))
+        learnOp(Op.UnaryOperation("cos", cos))
+        learnOp(Op.Constant("π") { M_PI })
     }
     
     
@@ -77,6 +83,8 @@ class CalculatorBrain {
         switch op {
         case .Operand(let operand):
             return (operand, remainigOps)
+        case .Constant(_, let operation):
+            return (operation(), remainigOps)
         case .UnaryOperation(_, let operation):
             let evaluation = evaluate(remainigOps)
             if let operand = evaluation.result {
