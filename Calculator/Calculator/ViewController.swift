@@ -11,8 +11,9 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet weak var display: UILabel!
+    @IBOutlet weak var history: UILabel!
+    
     private var userIsInTheMiddleOfTypingANumber = false
-    private var userAddedFloatingPoint = false
     private var brain = CalculatorBrain()
     
     override func viewDidLoad() {
@@ -25,13 +26,13 @@ class ViewController: UIViewController {
     }
 
     @IBAction func appendDigit(sender: UIButton) {
-        appendNumber(sender.currentTitle!)
+        appendDigitSymbol(sender.currentTitle!)
     }
     
     
     @IBAction func enter() {
+        
         userIsInTheMiddleOfTypingANumber = false
-        userAddedFloatingPoint = false
         if let result = brain.pushOperand(displayValue) {
             displayValue = result
         }
@@ -41,14 +42,14 @@ class ViewController: UIViewController {
     }
     
     @IBAction func addFloatingPoint(sender: UIButton) {
-        if userAddedFloatingPoint {
-            return
+        let symbol = sender.currentTitle!
+        if display.text?.rangeOfString(symbol) == nil {
+            appendDigitSymbol(symbol)
         }
-        appendNumber(sender.currentTitle!)
-        userAddedFloatingPoint = true
     }
     
     @IBAction func operate(sender: UIButton) {
+        
         if userIsInTheMiddleOfTypingANumber {
             enter()
         }
@@ -67,7 +68,7 @@ class ViewController: UIViewController {
         displayValue = 0
     }
     
-    private func appendNumber(symbol: String) {
+    private func appendDigitSymbol(symbol: String) {
         
         if userIsInTheMiddleOfTypingANumber {
             display.text = display.text! + symbol
@@ -86,6 +87,7 @@ class ViewController: UIViewController {
         }
         set{
             display.text = "\(newValue)"
+            history.text = brain.displayStack
             userIsInTheMiddleOfTypingANumber = false
         }
     }
