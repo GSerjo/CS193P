@@ -12,6 +12,7 @@ class ViewController: UIViewController {
 
     @IBOutlet weak var display: UILabel!
     private var userIsInTheMiddleOfTypingANumber = false
+    private var userAddedFloatingPoint = false
     private var brain = CalculatorBrain()
     
     override func viewDidLoad() {
@@ -25,25 +26,27 @@ class ViewController: UIViewController {
     }
 
     @IBAction func appendDigit(sender: UIButton) {
-        let digit = sender.currentTitle!
-        if userIsInTheMiddleOfTypingANumber {
-            display.text = display.text! + digit
-        }
-        else {
-            display.text = digit
-            userIsInTheMiddleOfTypingANumber = true
-        }
+        appendNumber(sender.currentTitle!)
     }
     
     
     @IBAction func enter() {
         userIsInTheMiddleOfTypingANumber = false
+        userAddedFloatingPoint = false
         if let result = brain.pushOperand(displayValue) {
             displayValue = result
         }
         else {
             displayValue = 0
         }
+    }
+    
+    @IBAction func addFloatingPoint(sender: UIButton) {
+        if userAddedFloatingPoint {
+            return
+        }
+        appendNumber(sender.currentTitle!)
+        userAddedFloatingPoint = true
     }
     
     @IBAction func operate(sender: UIButton) {
@@ -60,9 +63,22 @@ class ViewController: UIViewController {
         }
     }
     
+    private func appendNumber(symbol: String) {
+        
+        if userIsInTheMiddleOfTypingANumber {
+            display.text = display.text! + symbol
+        }
+        else {
+            display.text = symbol
+            userIsInTheMiddleOfTypingANumber = true
+        }
+    }
+    
     var displayValue: Double{
         get{
-            return NSNumberFormatter().numberFromString(display.text!)!.doubleValue
+            let formatter = NSNumberFormatter()
+            formatter.locale = NSLocale(localeIdentifier: "en_US")
+            return formatter.numberFromString(display.text!)!.doubleValue
         }
         set{
             display.text = "\(newValue)"

@@ -21,7 +21,7 @@
                                 <rect key="frame" x="20" y="20" width="560" height="23"/>
                                 <animations/>
                                 <fontDescription key="fontDescription" type="system" pointSize="19"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9Va-Qz-XuZ">
@@ -99,6 +99,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vs-T7-M5h">
                                 <rect key="frame" x="28" y="463" width="102.5" height="129"/>
                                 <animations/>
+                                <state key="normal" title="."/>
+                                <connections>
+                                    <action selector="addFloatingPoint:" destination="BYZ-38-t0r" eventType="touchUpInside" id="miR-Jd-jd5"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fOl-JQ-Trc">
                                 <rect key="frame" x="249" y="463" width="102" height="129"/>
