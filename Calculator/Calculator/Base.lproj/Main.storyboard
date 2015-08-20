@@ -113,7 +113,7 @@
                                 <animations/>
                                 <state key="normal" title="0"/>
                                 <connections>
-                                    <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rtI-5W-Io8"/>
+                                    <action selector="appendDigit:" destination="BYZ-38-t0r" eventType="touchUpInside" id="VcZ-ID-QzW"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Vs-T7-M5h">
@@ -211,6 +211,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSs-R8-TUa">
                                 <rect key="frame" x="138.5" y="496.5" width="102.5" height="95.5"/>
                                 <animations/>
+                                <state key="normal" title="⬅︎"/>
+                                <connections>
+                                    <action selector="backspace" destination="BYZ-38-t0r" eventType="touchUpInside" id="CWc-A4-XAa"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CD4-1J-oGa">
                                 <rect key="frame" x="28" y="496.5" width="102.5" height="95.5"/>

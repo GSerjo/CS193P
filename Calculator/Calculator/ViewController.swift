@@ -63,6 +63,23 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func backspace() {
+        if userIsInTheMiddleOfTypingANumber == false {
+            return
+        }
+        let displayText = display.text!
+        
+        if displayText.characters.count < 1 {
+            return
+        }
+        
+        display.text = displayText.substringToIndex(displayText.endIndex.predecessor())
+        
+        if display.text!.characters.count < 1 {
+            displayValue = 0
+        }
+    }
+    
     @IBAction func clearAll() {
         brain = CalculatorBrain()
         displayValue = 0
