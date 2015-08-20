@@ -15,6 +15,7 @@ class ViewController: UIViewController {
     
     private var userIsInTheMiddleOfTypingANumber = false
     private var brain = CalculatorBrain()
+    private let minus = "-"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -54,14 +55,7 @@ class ViewController: UIViewController {
             enter()
         }
         if let operation = sender.currentTitle {
-            if let result = brain.performOperation(operation) {
-                displayValue = result
-                history.text = history.text! + "="
-            }
-            else {
-                displayValue = 0
-                history.text = history.text! + "ERROR"
-            }
+            performOperation(operation)
         }
     }
     
@@ -87,6 +81,22 @@ class ViewController: UIViewController {
         displayValue = 0
     }
     
+    @IBAction func addSign(sender: UIButton) {
+        if userIsInTheMiddleOfTypingANumber {
+            let displayText = display.text!
+            if displayText.rangeOfString(minus) != nil {
+                display.text = displayText.substringFromIndex(displayText.startIndex.successor())
+            }
+            else {
+                display.text = minus + displayText
+            }
+        }
+        else {
+            if let operation = sender.currentTitle {
+                performOperation(operation)
+            }
+        }
+    }
     private func appendDigitSymbol(symbol: String) {
         
         if userIsInTheMiddleOfTypingANumber {
@@ -95,6 +105,17 @@ class ViewController: UIViewController {
         else {
             display.text = symbol
             userIsInTheMiddleOfTypingANumber = true
+        }
+    }
+    
+    private func performOperation(operation: String) {
+        if let result = brain.performOperation(operation) {
+            displayValue = result
+            history.text = history.text! + "="
+        }
+        else {
+            displayValue = 0
+            history.text = history.text! + "ERROR"
         }
     }
     

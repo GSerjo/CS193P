@@ -219,6 +219,10 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CD4-1J-oGa">
                                 <rect key="frame" x="28" y="496.5" width="102.5" height="95.5"/>
                                 <animations/>
+                                <state key="normal" title="±"/>
+                                <connections>
+                                    <action selector="addSign:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Y71-Gt-a51"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>

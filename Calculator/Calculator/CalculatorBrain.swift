@@ -50,6 +50,7 @@ class CalculatorBrain {
         learnOp(Op.UnaryOperation("sin", sin))
         learnOp(Op.UnaryOperation("cos", cos))
         learnOp(Op.Constant("π") { M_PI })
+        learnOp(Op.UnaryOperation("±") { -$0 })
     }
     
     var displayStack: String {
