@@ -56,9 +56,11 @@ class ViewController: UIViewController {
         if let operation = sender.currentTitle {
             if let result = brain.performOperation(operation) {
                 displayValue = result
+                history.text = history.text! + "="
             }
             else {
                 displayValue = 0
+                history.text = history.text! + "ERROR"
             }
         }
     }
