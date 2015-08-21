@@ -19,7 +19,7 @@ class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        displayValue = 0
+        displayValue = nil
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,15 +34,20 @@ class ViewController: UIViewController {
     @IBAction func enter() {
         
         userIsInTheMiddleOfTypingANumber = false
-        if let result = brain.pushOperand(displayValue) {
+        
+        guard let operand = displayValue else {
+            return
+        }
+        if let result = brain.pushOperand(operand) {
             displayValue = result
         }
         else {
-            displayValue = 0
+            displayValue = nil
         }
     }
     
     @IBAction func addFloatingPoint(sender: UIButton) {
+        
         let symbol = sender.currentTitle!
         if display.text?.rangeOfString(symbol) == nil {
             appendDigitSymbol(symbol)
@@ -60,9 +65,11 @@ class ViewController: UIViewController {
     }
     
     @IBAction func backspace() {
-        if userIsInTheMiddleOfTypingANumber == false {
+        
+        guard userIsInTheMiddleOfTypingANumber else {
             return
         }
+        
         let displayText = display.text!
         
         if displayText.characters.count < 1 {
@@ -114,19 +121,29 @@ class ViewController: UIViewController {
             history.text = history.text! + "="
         }
         else {
-            displayValue = 0
+            displayValue = nil
             history.text = history.text! + "ERROR"
         }
     }
     
-    var displayValue: Double{
+    var displayValue: Double? {
         get{
+            guard let displayText = display.text else {
+                return nil
+            }
+            
             let formatter = NSNumberFormatter()
             formatter.locale = NSLocale(localeIdentifier: "en_US")
-            return formatter.numberFromString(display.text!)!.doubleValue
+            return formatter.numberFromString(displayText)?.doubleValue
         }
-        set{
-            display.text = "\(newValue)"
+        set {
+            if let operand = newValue {
+                display.text = "\(operand)"
+            }
+            else {
+                display.text = " "
+            }
+            
             history.text = brain.displayStack
             userIsInTheMiddleOfTypingANumber = false
         }
