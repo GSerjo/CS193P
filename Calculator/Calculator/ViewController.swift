@@ -70,25 +70,28 @@ class ViewController: UIViewController {
             return
         }
         
-        let displayText = display.text!
+        guard let displayText = display.text else {
+            return
+        }
         
-        if displayText.characters.count < 1 {
+        guard displayText.characters.count < 1  else{
             return
         }
         
         display.text = displayText.substringToIndex(displayText.endIndex.predecessor())
         
         if display.text!.characters.count < 1 {
-            displayValue = 0
+            displayValue = nil
         }
     }
     
     @IBAction func clearAll() {
         brain = CalculatorBrain()
-        displayValue = 0
+        displayValue = nil
     }
     
     @IBAction func addSign(sender: UIButton) {
+        
         if userIsInTheMiddleOfTypingANumber {
             let displayText = display.text!
             if displayText.rangeOfString(minus) != nil {
