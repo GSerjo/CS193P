@@ -147,7 +147,7 @@ class ViewController: UIViewController {
                 display.text = " "
             }
             
-            history.text = brain.displayStack
+            history.text = brain.displayStack ?? " "
             userIsInTheMiddleOfTypingANumber = false
         }
     }

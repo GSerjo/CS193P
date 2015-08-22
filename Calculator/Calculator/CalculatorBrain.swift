@@ -79,9 +79,9 @@ class CalculatorBrain {
         }
     }
     
-    var displayStack: String {
+    var displayStack: String? {
         get {
-            return " ".join(opStack.map{"\($0)"})
+            return opStack.isEmpty ? nil : " ".join(opStack.map{"\($0)"})
         }
     }
     
