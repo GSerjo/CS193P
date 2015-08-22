@@ -53,6 +53,32 @@ class CalculatorBrain {
         learnOp(Op.UnaryOperation("±") { -$0 })
     }
     
+    /// PropertyList
+    var program: AnyObject {
+        get {
+            return opStack.map{ $0.description }
+        }
+        set {
+            guard let opSymbols = newValue as? [String] else {
+                return
+            }
+            var newOpStack = [Op]()
+            for opSymbol in opSymbols {
+                if let op = knownOps[opSymbol] {
+                    newOpStack.append(op)
+                }
+                else {
+                    let formatter = NSNumberFormatter()
+                    formatter.locale = NSLocale(localeIdentifier: "en_US")
+                    if let operand = formatter.numberFromString(opSymbol)?.doubleValue {
+                        newOpStack.append(Op.Operand(operand))
+                    }
+                }
+            }
+            opStack = newOpStack
+        }
+    }
+    
     var displayStack: String {
         get {
             return " ".join(opStack.map{"\($0)"})
