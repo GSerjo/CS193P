@@ -16,6 +16,12 @@ final class ViewController: UIViewController {
     private var userIsInTheMiddleOfTypingANumber = false
     private var brain = CalculatorBrain()
     private let minus = "-"
+    private let numberFormatter: NSNumberFormatter = {
+        let formatter = NSNumberFormatter()
+        formatter.locale = NSLocale(localeIdentifier: "en_US")
+        formatter.groupingSeparator = " "
+        return formatter
+        }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -134,10 +140,7 @@ final class ViewController: UIViewController {
             guard let displayText = display.text else {
                 return nil
             }
-            
-            let formatter = NSNumberFormatter()
-            formatter.locale = NSLocale(localeIdentifier: "en_US")
-            return formatter.numberFromString(displayText)?.doubleValue
+            return numberFormatter.numberFromString(displayText)?.doubleValue
         }
         set {
             if let operand = newValue {
