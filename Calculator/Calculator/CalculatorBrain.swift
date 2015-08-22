@@ -13,7 +13,7 @@ class CalculatorBrain {
     private var opStack = [Op]()
     private var knownOps = [String: Op]()
     
-    private enum Op: CustomStringConvertible {
+    enum Op: CustomStringConvertible {
         
         case Constant(String, () -> Double)
         case Operand(Double)
@@ -97,7 +97,7 @@ class CalculatorBrain {
         return evaluate()
     }
     
-    private func evaluate() -> Double? {
+    func evaluate() -> Double? {
         let (result, remainder) = evaluate(opStack)
         print("\(opStack) = \(result) with \(remainder) left over")
         return result
