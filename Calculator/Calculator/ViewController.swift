@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+final class ViewController: UIViewController {
 
     @IBOutlet weak var display: UILabel!
     @IBOutlet weak var history: UILabel!
@@ -29,7 +29,6 @@ class ViewController: UIViewController {
     @IBAction func appendDigit(sender: UIButton) {
         appendDigitSymbol(sender.currentTitle!)
     }
-    
     
     @IBAction func enter() {
         
@@ -74,7 +73,7 @@ class ViewController: UIViewController {
             return
         }
         
-        guard displayText.characters.count < 1  else{
+        guard displayText.characters.count > 0  else{
             return
         }
         
@@ -107,6 +106,7 @@ class ViewController: UIViewController {
             }
         }
     }
+    
     private func appendDigitSymbol(symbol: String) {
         
         if userIsInTheMiddleOfTypingANumber {
@@ -152,4 +152,3 @@ class ViewController: UIViewController {
         }
     }
 }
-

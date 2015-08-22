@@ -8,7 +8,7 @@
 
 import Foundation
 
-class CalculatorBrain {
+final class CalculatorBrain {
     
     private var opStack = [Op]()
     private var knownOps = [String: Op]()
