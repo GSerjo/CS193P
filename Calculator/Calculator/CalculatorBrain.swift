@@ -12,11 +12,13 @@ final class CalculatorBrain {
     
     private var opStack = [Op]()
     private var knownOps = [String: Op]()
+    private var variableValues = [String: Double]()
     
     enum Op: CustomStringConvertible {
         
         case Constant(String, () -> Double)
         case Operand(Double)
+        case Variable(String)
         case UnaryOperation(String, Double -> Double)
         case BinaryOperation(String, (Double, Double) -> Double)
         
@@ -31,6 +33,8 @@ final class CalculatorBrain {
                     return symbol
                 case .Constant(let symbol, _):
                     return symbol
+                case .Variable(let symbol):
+                    return "\(symbol)"
                 }
             }
         }
@@ -90,6 +94,11 @@ final class CalculatorBrain {
         return evaluate()
     }
     
+    func pushOperand(symbol: String) -> Double? {
+        opStack.append(Op.Variable(symbol))
+        return evaluate()
+    }
+    
     func performOperation(symbol: String) -> Double? {
         if let operation = knownOps[symbol] {
             opStack.append(operation)
@@ -130,6 +139,8 @@ final class CalculatorBrain {
                     return (operation(operand1, operand2), evaluation2.remainingOps)
                 }
             }
+        case .Variable(_):
+            return (nil, remainigOps)
         }
         return (nil, ops)
     }
