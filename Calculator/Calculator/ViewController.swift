@@ -16,12 +16,7 @@ final class ViewController: UIViewController {
     private var userIsInTheMiddleOfTypingANumber = false
     private var brain = CalculatorBrain()
     private let minus = "-"
-    private let numberFormatter: NSNumberFormatter = {
-        let formatter = NSNumberFormatter()
-        formatter.locale = NSLocale(localeIdentifier: "en_US")
-        formatter.groupingSeparator = " "
-        return formatter
-        }()
+    private let numberFormatter = NumberFormatter.sharedInstance
     
     override func viewDidLoad() {
         super.viewDidLoad()

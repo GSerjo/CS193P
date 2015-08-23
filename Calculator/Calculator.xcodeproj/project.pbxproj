@@ -12,6 +12,7 @@
 		B2BB5F371B7E457800A9BB75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BB5F351B7E457800A9BB75 /* Main.storyboard */; };
 		B2BB5F391B7E457800A9BB75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2BB5F381B7E457800A9BB75 /* Assets.xcassets */; };
 		B2BB5F3C1B7E457800A9BB75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BB5F3A1B7E457800A9BB75 /* LaunchScreen.storyboard */; };
+		B2BED46D1B8A6A66002311D2 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BED46C1B8A6A66002311D2 /* NumberFormatter.swift */; };
 		B2FD42D31B7F5814009E6855 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FD42D21B7F5814009E6855 /* CalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
@@ -23,6 +24,7 @@
 		B2BB5F381B7E457800A9BB75 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B2BB5F3B1B7E457800A9BB75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B2BB5F3D1B7E457800A9BB75 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B2BED46C1B8A6A66002311D2 /* NumberFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NumberFormatter.swift; sourceTree = "<group>"; };
 		B2FD42D21B7F5814009E6855 /* CalculatorBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CalculatorBrain.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -63,6 +65,7 @@
 				B2BB5F3A1B7E457800A9BB75 /* LaunchScreen.storyboard */,
 				B2BB5F3D1B7E457800A9BB75 /* Info.plist */,
 				B2FD42D21B7F5814009E6855 /* CalculatorBrain.swift */,
+				B2BED46C1B8A6A66002311D2 /* NumberFormatter.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -138,6 +141,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B2FD42D31B7F5814009E6855 /* CalculatorBrain.swift in Sources */,
+				B2BED46D1B8A6A66002311D2 /* NumberFormatter.swift in Sources */,
 				B2BB5F341B7E457800A9BB75 /* ViewController.swift in Sources */,
 				B2BB5F321B7E457800A9BB75 /* AppDelegate.swift in Sources */,
 			);

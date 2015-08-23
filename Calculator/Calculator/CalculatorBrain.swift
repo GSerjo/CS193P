@@ -8,11 +8,12 @@
 
 import Foundation
 
-final class CalculatorBrain {
+final class CalculatorBrain: CustomStringConvertible {
     
     private var opStack = [Op]()
     private var knownOps = [String: Op]()
     private var variableValues = [String: Double]()
+    private let numberFormatter = NumberFormatter.sharedInstance
     
     enum Op: CustomStringConvertible {
         
@@ -72,9 +73,7 @@ final class CalculatorBrain {
                     newOpStack.append(op)
                 }
                 else {
-                    let formatter = NSNumberFormatter()
-                    formatter.locale = NSLocale(localeIdentifier: "en_US")
-                    if let operand = formatter.numberFromString(opSymbol)?.doubleValue {
+                    if let operand = numberFormatter.numberFromString(opSymbol)?.doubleValue {
                         newOpStack.append(Op.Operand(operand))
                     }
                 }
@@ -87,6 +86,10 @@ final class CalculatorBrain {
         get {
             return opStack.isEmpty ? nil : " ".join(opStack.map{"\($0)"})
         }
+    }
+    
+    var description: String {
+        return ""
     }
     
     func pushOperand(operand: Double) -> Double? {
@@ -139,8 +142,8 @@ final class CalculatorBrain {
                     return (operation(operand1, operand2), evaluation2.remainingOps)
                 }
             }
-        case .Variable(_):
-            return (nil, remainigOps)
+        case .Variable(let symbol):
+            return (variableValues[symbol], remainigOps)
         }
         return (nil, ops)
     }
