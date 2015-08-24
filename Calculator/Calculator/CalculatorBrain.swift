@@ -89,7 +89,7 @@ final class CalculatorBrain: CustomStringConvertible {
     }
     
     var description: String {
-        return ""
+        return " "
     }
     
     func pushOperand(operand: Double) -> Double? {
@@ -113,6 +113,40 @@ final class CalculatorBrain: CustomStringConvertible {
         let (result, remainder) = evaluate(opStack)
         print("\(opStack) = \(result) with \(remainder) left over")
         return result
+    }
+    
+    private func description(ops: [Op]) -> (result: String?, remainingOps: [Op]) {
+        if ops.isEmpty {
+            return (nil, ops)
+        }
+        
+        var remainingOps = ops
+        let op = remainingOps.removeLast()
+        
+        switch op {
+        case .Operand(let operand):
+            return ("\(operand)", remainingOps)
+        case .Constant(let symbol, _):
+            return (symbol, remainingOps)
+        case .Variable(let symbol):
+            return (symbol, remainingOps)
+        case .UnaryOperation(let symbol, _):
+            let evaluation = description(remainingOps)
+            if let operand = evaluation.result {
+                return ("\(symbol)(\(operand))", remainingOps)
+            }
+        case .BinaryOperation(let symbol, _):
+            let evaluation1 = description(remainingOps)
+            if let operand1 = evaluation1.result {
+                let evaluation2 = description(evaluation1.remainingOps)
+                if let operand2 = evaluation2.result {
+                    return ("\(operand2) \(symbol) \(operand1)", remainingOps)
+                }
+            }
+            
+        }
+        
+        return (nil, ops)
     }
     
     private func evaluate(ops: [Op]) -> (result: Double?, remainingOps: [Op]) {
