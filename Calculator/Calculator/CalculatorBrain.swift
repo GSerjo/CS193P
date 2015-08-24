@@ -89,7 +89,8 @@ final class CalculatorBrain: CustomStringConvertible {
     }
     
     var description: String {
-        return " "
+        let (result, _) = description(opStack)
+        return result ?? " "
     }
     
     func pushOperand(operand: Double) -> Double? {
