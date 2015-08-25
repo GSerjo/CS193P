@@ -45,6 +45,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21b-Uf-Aa9">
                                 <rect key="frame" x="469.5" y="498" width="102.5" height="94"/>
                                 <animations/>
+                                <state key="normal" title="M"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4lT-Cw-F7m">
                                 <rect key="frame" x="138.5" y="90" width="102.5" height="94"/>
@@ -201,6 +202,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="j39-VC-mal">
                                 <rect key="frame" x="359" y="498" width="102.5" height="94"/>
                                 <animations/>
+                                <state key="normal" title="➞M"/>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QSs-R8-TUa">
                                 <rect key="frame" x="138.5" y="498" width="102.5" height="94"/>
