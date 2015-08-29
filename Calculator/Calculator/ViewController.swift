@@ -92,11 +92,7 @@ final class ViewController: UIViewController {
             return
         }
         
-        guard let displayText = display.text else {
-            return
-        }
-        
-        guard displayText.characters.count > 0  else{
+        guard let displayText = display.text where displayText.characters.count > 0 else{
             return
         }
         
@@ -167,7 +163,6 @@ final class ViewController: UIViewController {
                 display.text = " "
             }
             
-//            history.text = brain.displayStack ?? " "
             history.text = brain.description ?? " "
             userIsInTheMiddleOfTypingANumber = false
         }

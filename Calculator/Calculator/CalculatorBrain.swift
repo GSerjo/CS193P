@@ -87,12 +87,6 @@ final class CalculatorBrain: CustomStringConvertible {
         }
     }
     
-    var displayStack: String? {
-        get {
-            return opStack.isEmpty ? nil : opStack.map{"\($0)"}.joinWithSeparator(" ")
-        }
-    }
-    
     var description: String {
         let (result, _) = description(opStack)
         return result ?? " "
