@@ -80,5 +80,11 @@ class FaceView: UIView {
         facePath.lineWidth = lineWidth
         color.set()
         facePath.stroke()
+        
+        bezierPathForEye(.Left).stroke()
+        bezierPathForEye(.Right).stroke()
+        
+        let smiliness = -0.75
+        bezierPathForSmile(smiliness).stroke()
     }
 }
