@@ -58,6 +58,11 @@ final class CalculatorBrain: CustomStringConvertible {
         learnOp(Op.UnaryOperation("±") { -$0 })
     }
     
+    func clear() {
+        opStack = [Op]()
+        variableValues = [String: Double]()
+    }
+    
     /// PropertyList
     var program: AnyObject {
         get {

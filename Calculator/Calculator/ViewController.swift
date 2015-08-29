@@ -108,7 +108,7 @@ final class ViewController: UIViewController {
     }
     
     @IBAction func clearAll() {
-        brain = CalculatorBrain()
+        brain.clear()
         displayValue = nil
     }
     
@@ -148,7 +148,7 @@ final class ViewController: UIViewController {
         }
         else {
             displayValue = nil
-            history.text = history.text! + "ERROR"
+            history.text = history.text!
         }
     }
     
