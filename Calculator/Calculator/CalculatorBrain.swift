@@ -84,13 +84,17 @@ final class CalculatorBrain: CustomStringConvertible {
     
     var displayStack: String? {
         get {
-            return opStack.isEmpty ? nil : " ".join(opStack.map{"\($0)"})
+            return opStack.isEmpty ? nil : opStack.map{"\($0)"}.joinWithSeparator(" ")
         }
     }
     
     var description: String {
         let (result, _) = description(opStack)
         return result ?? " "
+    }
+    
+    func setVariable(name: String, value: Double) {
+        variableValues[name] = value
     }
     
     func pushOperand(operand: Double) -> Double? {

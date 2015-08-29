@@ -46,6 +46,28 @@ final class ViewController: UIViewController {
         }
     }
     
+    @IBAction func setVariable(sender: UIButton) {
+        userIsInTheMiddleOfTypingANumber = false
+        
+        guard let value  = displayValue else {
+            return
+        }
+
+        let variableText = sender.currentTitle!
+        let variableName = variableText.substringFromIndex(variableText.startIndex.successor())
+            
+        brain.setVariable(variableName, value: value)
+        displayValue = brain.evaluate()
+    }
+    
+    @IBAction func pushVariable(sender: UIButton) {
+        if userIsInTheMiddleOfTypingANumber {
+            enter()
+        }
+        
+        displayValue = brain.pushOperand(sender.currentTitle!)
+    }
+    
     @IBAction func addFloatingPoint(sender: UIButton) {
         
         let symbol = sender.currentTitle!
