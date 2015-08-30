@@ -40,6 +40,9 @@
                             <constraint firstItem="ciR-OC-I6N" firstAttribute="leading" secondItem="Ht9-AP-vlA" secondAttribute="leading" id="zpf-mM-ez5"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="faceView" destination="ciR-OC-I6N" id="6Ig-Q4-aM2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ciF-js-jlc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
