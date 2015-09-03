@@ -14,6 +14,7 @@
 		B24EA5041B9609040074C6A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B24EA5021B9609040074C6A9 /* LaunchScreen.storyboard */; };
 		B24EA50D1B960D010074C6A9 /* HappinessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24EA50B1B960D010074C6A9 /* HappinessViewController.swift */; settings = {ASSET_TAGS = (); }; };
 		B24EA50E1B960D010074C6A9 /* FaceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24EA50C1B960D010074C6A9 /* FaceView.swift */; settings = {ASSET_TAGS = (); }; };
+		B24EA5101B98B5650074C6A9 /* TextViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B24EA50F1B98B5650074C6A9 /* TextViewController.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,7 @@
 		B24EA5051B9609040074C6A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		B24EA50B1B960D010074C6A9 /* HappinessViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HappinessViewController.swift; sourceTree = "<group>"; };
 		B24EA50C1B960D010074C6A9 /* FaceView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FaceView.swift; sourceTree = "<group>"; };
+		B24EA50F1B98B5650074C6A9 /* TextViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TextViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -66,6 +68,7 @@
 				B24EA5001B9609040074C6A9 /* Assets.xcassets */,
 				B24EA5021B9609040074C6A9 /* LaunchScreen.storyboard */,
 				B24EA5051B9609040074C6A9 /* Info.plist */,
+				B24EA50F1B98B5650074C6A9 /* TextViewController.swift */,
 			);
 			path = Psychologist;
 			sourceTree = "<group>";
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B24EA5101B98B5650074C6A9 /* TextViewController.swift in Sources */,
 				B24EA4FC1B9609040074C6A9 /* PsychologistViewController.swift in Sources */,
 				B24EA50D1B960D010074C6A9 /* HappinessViewController.swift in Sources */,
 				B24EA4FA1B9609040074C6A9 /* AppDelegate.swift in Sources */,

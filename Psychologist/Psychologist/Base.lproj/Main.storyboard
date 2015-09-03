@@ -48,7 +48,6 @@
                                 <state key="normal" title="Nothing"/>
                                 <connections>
                                     <action selector="nothing:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qi8-XX-sBO"/>
-                                    <segue destination="v0j-pz-xlX" kind="showDetail" identifier="nothing" id="eEm-Tf-b9x"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="q8J-SB-zB5">
@@ -100,6 +99,9 @@
                         </variation>
                     </view>
                     <navigationItem key="navigationItem" title="Psychologist" id="CQI-ah-ZiL"/>
+                    <connections>
+                        <segue destination="v0j-pz-xlX" kind="showDetail" identifier="nothing" id="tDo-Zl-X6q"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
@@ -157,7 +159,15 @@
                             <constraint firstItem="60D-br-4pW" firstAttribute="leading" secondItem="eOG-OS-LJt" secondAttribute="leading" id="q0z-6e-D7L"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="24P-71-AWY"/>
+                    <navigationItem key="navigationItem" id="24P-71-AWY">
+                        <barButtonItem key="rightBarButtonItem" title="History" id="fLg-l2-KSi">
+                            <connections>
+                                <segue destination="9eU-yO-ofo" kind="popoverPresentation" identifier="ShowDiognosticHistory" popoverAnchorBarButtonItem="fLg-l2-KSi" id="4wD-GQ-toG">
+                                    <popoverArrowDirection key="popoverArrowDirection" up="YES" down="YES" left="YES" right="YES"/>
+                                </segue>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="faceView" destination="60D-br-4pW" id="zct-MH-2dH"/>
                     </connections>
@@ -170,6 +180,43 @@
                 </panGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1227" y="658"/>
+        </scene>
+        <!--Text View Controller-->
+        <scene sceneID="70N-La-6v9">
+            <objects>
+                <viewController id="9eU-yO-ofo" customClass="TextViewController" customModule="Psychologist" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Lve-l0-BEH"/>
+                        <viewControllerLayoutGuide type="bottom" id="IgR-xX-eak"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Dhv-Hi-vFF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UQO-kQ-Tbd">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <mutableString key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</mutableString>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="UQO-kQ-Tbd" firstAttribute="bottom" secondItem="IgR-xX-eak" secondAttribute="top" id="0j9-yZ-jcx"/>
+                            <constraint firstAttribute="trailing" secondItem="UQO-kQ-Tbd" secondAttribute="trailing" id="3kZ-Na-SZy"/>
+                            <constraint firstItem="UQO-kQ-Tbd" firstAttribute="top" secondItem="Dhv-Hi-vFF" secondAttribute="top" id="PIa-X7-YXg"/>
+                            <constraint firstItem="UQO-kQ-Tbd" firstAttribute="leading" secondItem="Dhv-Hi-vFF" secondAttribute="leading" id="r4f-LJ-I3p"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="textView" destination="UQO-kQ-Tbd" id="YBB-kj-9b5"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="TaL-mN-7iY" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1974" y="658"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="0d9-pJ-JFQ">
@@ -211,6 +258,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="eEm-Tf-b9x"/>
+        <segue reference="tDo-Zl-X6q"/>
     </inferredMetricsTieBreakers>
 </document>
