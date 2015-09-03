@@ -11,7 +11,12 @@ import UIKit
 class PsychologistViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        if let hvc = segue.destinationViewController as? HappinessViewController {
+        
+        guard let nav = segue.destinationViewController as? UINavigationController else {
+            return
+        }
+        
+        if let hvc = nav.visibleViewController as? HappinessViewController {
             if let identifier = segue.identifier {
                 switch identifier {
                 case "sad": hvc.happiness = 0
@@ -21,6 +26,4 @@ class PsychologistViewController: UIViewController {
             }
         }
     }
-
 }
-
