@@ -8,7 +8,7 @@
 
 import UIKit
 
-final class HappinessViewController: UIViewController, FaceViewDataSource {
+class HappinessViewController: UIViewController, FaceViewDataSource {
     
     private struct Constants {
         static let HappinessGestureScale: CGFloat = 4
