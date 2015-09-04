@@ -12,6 +12,14 @@ final class DiagnosedHappinessViewController : HappinessViewController, UIPopove
     
     private let defaults = NSUserDefaults.standardUserDefaults()
     
+    private struct History {
+        
+        private init(){}
+        
+        static let SegueId = "ShowDiognosticHistory"
+        static let DiagnosticHistoty = "DiagnosticHistoty"
+    }
+    
     var diagnosticHistory: [Int]{
         get {
             return defaults.objectForKey(History.DiagnosticHistoty) as? [Int] ?? []
@@ -26,14 +34,7 @@ final class DiagnosedHappinessViewController : HappinessViewController, UIPopove
             diagnosticHistory.append(happiness)
         }
     }
-    
-    private struct History {
-        private init(){}
-        
-        static let SegueId = "ShowDiognosticHistory"
-        static let DiagnosticHistoty = "DiagnosticHistoty"
-    }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             switch identifier {

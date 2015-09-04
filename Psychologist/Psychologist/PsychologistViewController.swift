@@ -8,11 +8,20 @@
 
 import UIKit
 
-class PsychologistViewController: UIViewController {
+final class PsychologistViewController: UIViewController {
+    
+    private struct SegueId {
+        
+        private init(){}
+        
+        static let Sad = "sad"
+        static let Happy = "happy"
+        static let Nothing = "nothing"
+    }
     
 
     @IBAction func nothing(sender: UIButton) {
-        performSegueWithIdentifier("nothing", sender: self)
+        performSegueWithIdentifier(SegueId.Nothing, sender: self)
     }
     
     
@@ -25,9 +34,9 @@ class PsychologistViewController: UIViewController {
         if let hvc = nav.visibleViewController as? HappinessViewController {
             if let identifier = segue.identifier {
                 switch identifier {
-                case "sad": hvc.happiness = 0
-                case "happy": hvc.happiness = 100
-                case "nothing": hvc.happiness = 25
+                case SegueId.Sad: hvc.happiness = 0
+                case SegueId.Happy: hvc.happiness = 100
+                case SegueId.Nothing: hvc.happiness = 25
                 default: hvc.happiness = 50
                 }
             }

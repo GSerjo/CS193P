@@ -52,5 +52,4 @@ class HappinessViewController: UIViewController, FaceViewDataSource {
     func smilinessForFaceView(sender: FaceView) -> Double? {
         return Double(happiness - 50)/50
     }
-
 }
