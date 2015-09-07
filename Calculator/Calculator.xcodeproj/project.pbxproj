@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B26A39D41B9E3836002D1553 /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A39D31B9E3836002D1553 /* AxesDrawer.swift */; settings = {ASSET_TAGS = (); }; };
+		B26A39D61B9E3BE8002D1553 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A39D51B9E3BE8002D1553 /* GraphViewController.swift */; settings = {ASSET_TAGS = (); }; };
+		B26A39D81B9E3CA5002D1553 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A39D71B9E3CA5002D1553 /* GraphView.swift */; settings = {ASSET_TAGS = (); }; };
 		B2BB5F321B7E457800A9BB75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB5F311B7E457800A9BB75 /* AppDelegate.swift */; };
 		B2BB5F341B7E457800A9BB75 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB5F331B7E457800A9BB75 /* CalculatorViewController.swift */; };
 		B2BB5F371B7E457800A9BB75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BB5F351B7E457800A9BB75 /* Main.storyboard */; };
@@ -17,6 +20,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B26A39D31B9E3836002D1553 /* AxesDrawer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AxesDrawer.swift; sourceTree = "<group>"; };
+		B26A39D51B9E3BE8002D1553 /* GraphViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphViewController.swift; sourceTree = "<group>"; };
+		B26A39D71B9E3CA5002D1553 /* GraphView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GraphView.swift; sourceTree = "<group>"; };
 		B2BB5F2E1B7E457800A9BB75 /* Calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Calculator.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B2BB5F311B7E457800A9BB75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B2BB5F331B7E457800A9BB75 /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
@@ -58,6 +64,7 @@
 		B2BB5F301B7E457800A9BB75 /* Calculator */ = {
 			isa = PBXGroup;
 			children = (
+				B26A39D31B9E3836002D1553 /* AxesDrawer.swift */,
 				B2BB5F311B7E457800A9BB75 /* AppDelegate.swift */,
 				B2BB5F331B7E457800A9BB75 /* CalculatorViewController.swift */,
 				B2BB5F351B7E457800A9BB75 /* Main.storyboard */,
@@ -66,6 +73,8 @@
 				B2BB5F3D1B7E457800A9BB75 /* Info.plist */,
 				B2FD42D21B7F5814009E6855 /* CalculatorBrain.swift */,
 				B2BED46C1B8A6A66002311D2 /* NumberFormatter.swift */,
+				B26A39D51B9E3BE8002D1553 /* GraphViewController.swift */,
+				B26A39D71B9E3CA5002D1553 /* GraphView.swift */,
 			);
 			path = Calculator;
 			sourceTree = "<group>";
@@ -142,6 +151,9 @@
 			files = (
 				B2FD42D31B7F5814009E6855 /* CalculatorBrain.swift in Sources */,
 				B2BED46D1B8A6A66002311D2 /* NumberFormatter.swift in Sources */,
+				B26A39D81B9E3CA5002D1553 /* GraphView.swift in Sources */,
+				B26A39D41B9E3836002D1553 /* AxesDrawer.swift in Sources */,
+				B26A39D61B9E3BE8002D1553 /* GraphViewController.swift in Sources */,
 				B2BB5F341B7E457800A9BB75 /* CalculatorViewController.swift in Sources */,
 				B2BB5F321B7E457800A9BB75 /* AppDelegate.swift in Sources */,
 			);

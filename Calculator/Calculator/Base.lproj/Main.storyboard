@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8187.4" systemVersion="15A279b" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Sok-LO-MtN">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8151.3"/>
@@ -319,6 +319,9 @@
                                 <rect key="frame" x="30" y="51" width="43" height="30"/>
                                 <animations/>
                                 <state key="normal" title="Graph"/>
+                                <connections>
+                                    <segue destination="X1S-Vr-kNJ" kind="showDetail" id="ded-qp-uFb"/>
+                                </connections>
                             </button>
                         </subviews>
                         <animations/>
@@ -459,7 +462,55 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="182" y="153"/>
+            <point key="canvasLocation" x="342" y="-154"/>
+        </scene>
+        <!--Graph View Controller-->
+        <scene sceneID="OfE-8w-mlN">
+            <objects>
+                <viewController id="X1S-Vr-kNJ" customClass="GraphViewController" customModule="Calculator" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="tGR-hN-RIw"/>
+                        <viewControllerLayoutGuide type="bottom" id="FKC-M1-DsM"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="3Dt-XO-pjF">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="q0L-Xb-IqC" customClass="GraphView" customModule="Calculator" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <animations/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                        </subviews>
+                        <animations/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="q0L-Xb-IqC" firstAttribute="bottom" secondItem="FKC-M1-DsM" secondAttribute="top" id="Rny-mH-Ope"/>
+                            <constraint firstItem="q0L-Xb-IqC" firstAttribute="leading" secondItem="3Dt-XO-pjF" secondAttribute="leading" id="WlH-y6-zrZ"/>
+                            <constraint firstAttribute="trailing" secondItem="q0L-Xb-IqC" secondAttribute="trailing" id="YJS-fr-G8N"/>
+                            <constraint firstItem="q0L-Xb-IqC" firstAttribute="top" secondItem="3Dt-XO-pjF" secondAttribute="top" id="k3u-QR-abj"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ELc-GO-urM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="342" y="579"/>
+        </scene>
+        <!--Split View Controller-->
+        <scene sceneID="j5e-ST-Ugz">
+            <objects>
+                <splitViewController id="Sok-LO-MtN" sceneMemberID="viewController">
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="masterViewController" id="7fr-M1-mS3"/>
+                        <segue destination="X1S-Vr-kNJ" kind="relationship" relationship="detailViewController" id="wA5-6R-aXD"/>
+                    </connections>
+                </splitViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="beQ-qr-STU" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-616" y="182"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="ded-qp-uFb"/>
+    </inferredMetricsTieBreakers>
 </document>
