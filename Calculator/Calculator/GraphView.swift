@@ -21,6 +21,19 @@ class GraphView: UIView {
     
     var origin: CGPoint? { didSet { setNeedsDisplay() } }
     
+    func scale(gesture: UIPinchGestureRecognizer) {
+        if gesture.state == .Changed {
+            scale *= gesture.scale
+            gesture.scale = 1
+        }
+    }
+    
+    func origion(gesture: UITapGestureRecognizer) {
+        if gesture.state == .Ended {
+            origin = gesture.locationInView(self)
+        }
+    }
+    
     override func drawRect(rect: CGRect) {
         axesDrawer.contentScaleFactor = scale
         origin = origin ?? graphCenter
