@@ -28,6 +28,21 @@ class GraphView: UIView {
         }
     }
     
+    func origionMove(gesture: UIPanGestureRecognizer) {
+        switch gesture.state {
+        case .Ended: fallthrough
+        case .Changed:
+            let translation = gesture.translationInView(self)
+            if translation == CGPointZero {
+                break
+            }
+            origin?.x += translation.x
+            origin?.y += translation.y
+            gesture.setTranslation(CGPointZero, inView: self)
+        default: break
+        }
+    }
+    
     func origion(gesture: UITapGestureRecognizer) {
         if gesture.state == .Ended {
             origin = gesture.locationInView(self)

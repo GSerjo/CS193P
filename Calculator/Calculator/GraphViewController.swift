@@ -9,14 +9,15 @@
 import UIKit
 
 final class GraphViewController: UIViewController {
-
     
     @IBOutlet weak var graphView: GraphView! {
         didSet {
-            graphView.addGestureRecognizer(UIPinchGestureRecognizer(target: graphView, action: "scale:"))
             let tapGesture = UITapGestureRecognizer(target: graphView, action: "origion:")
             tapGesture.numberOfTapsRequired = 2
             graphView.addGestureRecognizer(tapGesture)
+
+            graphView.addGestureRecognizer(UIPinchGestureRecognizer(target: graphView, action: "scale:"))
+            graphView.addGestureRecognizer(UIPanGestureRecognizer(target: graphView, action: "origionMove:"))
         }
     }
     
