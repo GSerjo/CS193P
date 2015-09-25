@@ -12,6 +12,8 @@ import UIKit
 class GraphView: UIView {
     
     let axesDrawer = AxesDrawer(color: UIColor.blueColor())
+    weak var dataSource: GraphViewDataSource?
+    
     private var graphCenter: CGPoint {
         return convertPoint(center, fromView: superview)
     }
@@ -20,6 +22,8 @@ class GraphView: UIView {
     var scale: CGFloat = 50 { didSet { setNeedsDisplay() } }
     
     var origin: CGPoint? { didSet { setNeedsDisplay() } }
+    var color: UIColor = UIColor.blackColor() { didSet { setNeedsDisplay() } }
+    var lineWidth: CGFloat = 2.0 { didSet { setNeedsDisplay() } }
     
     func scale(gesture: UIPinchGestureRecognizer) {
         if gesture.state == .Changed {
@@ -47,6 +51,36 @@ class GraphView: UIView {
         if gesture.state == .Ended {
             origin = gesture.locationInView(self)
         }
+    }
+    
+    func drawCurveInRect(bounds: CGRect, origin: CGPoint, pointsPerUnits: CGFloat) {
+        color.set()
+        let path = UIBezierPath()
+        path.lineWidth = lineWidth
+        var point = CGPoint()
+        
+        var firstValue = true
+        for var i = 0; i <= Int(bounds.size.width * contentScaleFactor); i++ {
+            point.x = CGFloat(i) / contentScaleFactor
+            if let y = dataSource?.y((point.x - origin.x)/scale) {
+                if !y.isNormal && !y.isZero {
+                    firstValue = true
+                    continue
+                }
+                point.y = origin.y - y * scale
+                if firstValue {
+                    path.moveToPoint(point)
+                    firstValue = false
+                }
+                else {
+                    path.addLineToPoint(point)
+                }
+            }
+            else {
+                firstValue = true
+            }
+        }
+        path.stroke()
     }
     
     override func drawRect(rect: CGRect) {

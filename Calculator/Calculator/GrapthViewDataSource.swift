@@ -9,5 +9,6 @@
 import UIKit
 
 protocol GraphViewDataSource: class {
+    
     func y(x: CGFloat) -> CGFloat?
 }
