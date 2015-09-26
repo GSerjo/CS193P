@@ -87,5 +87,6 @@ class GraphView: UIView {
         axesDrawer.contentScaleFactor = scale
         origin = origin ?? graphCenter
         axesDrawer.drawAxesInRect(bounds, origin: origin!, pointsPerUnit: scale)
+        drawCurveInRect(bounds, origin: origin!, pointsPerUnits: scale)
     }
 }
