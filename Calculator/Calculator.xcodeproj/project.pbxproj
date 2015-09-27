@@ -7,16 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		B26A39D41B9E3836002D1553 /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A39D31B9E3836002D1553 /* AxesDrawer.swift */; settings = {ASSET_TAGS = (); }; };
-		B26A39D61B9E3BE8002D1553 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A39D51B9E3BE8002D1553 /* GraphViewController.swift */; settings = {ASSET_TAGS = (); }; };
-		B26A39D81B9E3CA5002D1553 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A39D71B9E3CA5002D1553 /* GraphView.swift */; settings = {ASSET_TAGS = (); }; };
+		B26A39D41B9E3836002D1553 /* AxesDrawer.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A39D31B9E3836002D1553 /* AxesDrawer.swift */; };
+		B26A39D61B9E3BE8002D1553 /* GraphViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A39D51B9E3BE8002D1553 /* GraphViewController.swift */; };
+		B26A39D81B9E3CA5002D1553 /* GraphView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B26A39D71B9E3CA5002D1553 /* GraphView.swift */; };
 		B2BB5F321B7E457800A9BB75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB5F311B7E457800A9BB75 /* AppDelegate.swift */; };
 		B2BB5F341B7E457800A9BB75 /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BB5F331B7E457800A9BB75 /* CalculatorViewController.swift */; };
 		B2BB5F371B7E457800A9BB75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BB5F351B7E457800A9BB75 /* Main.storyboard */; };
 		B2BB5F391B7E457800A9BB75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B2BB5F381B7E457800A9BB75 /* Assets.xcassets */; };
 		B2BB5F3C1B7E457800A9BB75 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B2BB5F3A1B7E457800A9BB75 /* LaunchScreen.storyboard */; };
 		B2BED46D1B8A6A66002311D2 /* NumberFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2BED46C1B8A6A66002311D2 /* NumberFormatter.swift */; };
-		B2F45F9E1BAC764D00E9C322 /* GrapthViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F45F9D1BAC764D00E9C322 /* GrapthViewDataSource.swift */; settings = {ASSET_TAGS = (); }; };
+		B2F45F9E1BAC764D00E9C322 /* GrapthViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2F45F9D1BAC764D00E9C322 /* GrapthViewDataSource.swift */; };
 		B2FD42D31B7F5814009E6855 /* CalculatorBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2FD42D21B7F5814009E6855 /* CalculatorBrain.swift */; };
 /* End PBXBuildFile section */
 
@@ -273,7 +273,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Calculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.nelibur.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -285,7 +285,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = Calculator/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.4;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = org.nelibur.Calculator;
 				PRODUCT_NAME = "$(TARGET_NAME)";
