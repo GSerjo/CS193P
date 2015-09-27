@@ -8,10 +8,93 @@
 
 import UIKit
 
-class TweetTableViewController: UITableViewController {
+class TweetTableViewController: UITableViewController, UITextFieldDelegate {
 
+    var tweets = [[Tweet]]()
+    
+    private struct Storyboard {
+        static let CellReuseIndentifier = "Tweet"
+    }
+    
+    var lastSuccessfullRequest: TwitterRequest?
+    
+    var nextRequestToAttempt: TwitterRequest? {
+        if lastSuccessfullRequest == nil {
+            if searchText != nil {
+                return TwitterRequest(search: searchText!, count: 100)
+            }
+            else {
+                return nil
+            }
+        }
+        else {
+            return lastSuccessfullRequest!.requestForNewer
+        }
+    }
+    
+    var searchText: String? = "#stanford" {
+        didSet {
+            lastSuccessfullRequest = nil
+            searchTextField?.text = searchText
+            tweets.removeAll()
+            tableView.reloadData()
+            refresh()
+        }
+    }
+    
+    @IBOutlet weak var searchTextField: UITextField! {
+        didSet {
+            searchTextField.delegate = self
+            searchTextField.text = searchText
+        }
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField == searchTextField {
+            textField.resignFirstResponder()
+            searchText = textField.text
+        }
+        return true
+    }
+    
+    @IBAction func refresh(sender: UIRefreshControl?) {
+        
+        guard searchText != nil else {
+            return
+        }
+        if let request = nextRequestToAttempt {
+            self.lastSuccessfullRequest = request
+            request.fetchTweets { newTweets -> Void in
+                dispatch_async(dispatch_get_main_queue()) {
+                    
+                    defer { sender?.endRefreshing() }
+
+                    guard newTweets.isEmpty == false else {
+                        return
+                    }
+                    
+                    self.tweets.insert(newTweets, atIndex: 0)
+                    self.tableView.reloadData()
+                }
+            }
+        }
+        else {
+            sender?.endRefreshing()
+        }
+    }
+    
+    private func refresh() {
+        if refreshControl != nil {
+            refreshControl?.beginRefreshing()
+        }
+        refresh(refreshControl)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = tableView.rowHeight
+        tableView.rowHeight = UITableViewAutomaticDimension
+        refresh()
 
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
@@ -29,23 +112,24 @@ class TweetTableViewController: UITableViewController {
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return tweets.count
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return tweets[section].count
     }
-
-    /*
+    
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("reuseIdentifier", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier(Storyboard.CellReuseIndentifier, forIndexPath: indexPath) as! TweetTableViewCell
 
         // Configure the cell...
 
+        let tweet = tweets[indexPath.section][indexPath.row]
+        cell.tweet = tweet        
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
