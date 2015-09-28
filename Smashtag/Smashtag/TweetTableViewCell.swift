@@ -22,8 +22,23 @@ class TweetTableViewCell: UITableViewCell {
     
     private struct Color {
         static let hashTag = UIColor.purpleColor()
-        static let url = UIColor.blackColor()
+        static let url = UIColor.blueColor()
         static let user = UIColor.orangeColor()
+    }
+    
+    private func colorTweet(tweet: Tweet) -> NSMutableAttributedString {
+        var tweetText: String = tweet.text
+        
+        for _ in tweet.media {
+            tweetText += " 📷"
+        }
+        
+        let result = NSMutableAttributedString(string: tweetText)
+        result.setKeywordColor(tweet.hashtags, color: Color.hashTag)
+        result.setKeywordColor(tweet.urls, color: Color.url)
+        result.setKeywordColor(tweet.userMentions, color: Color.user)
+        
+        return result
     }
     
     func updateUI() {
@@ -33,22 +48,27 @@ class TweetTableViewCell: UITableViewCell {
         tweetProfileImageView?.image = nil
         
         // load new information from our tweet (if any)
-        if let tweet = self.tweet
-        {
-            tweetTextLabel?.text = tweet.text
-            if tweetTextLabel?.text != nil  {
-                for _ in tweet.media {
-                    tweetTextLabel.text! += " 📷"
-                }
+        guard let tweet = self.tweet else {
+            return
+        }
+        
+        tweetTextLabel?.attributedText = colorTweet(tweet)
+        
+        tweetScreenNameLabel?.text = "\(tweet.user)" // tweet.user.description
+        
+        if let profileImageURL = tweet.user.profileImageURL {
+            if let imageData = NSData(contentsOfURL: profileImageURL) { // blocks main thread!
+                tweetProfileImageView?.image = UIImage(data: imageData)
             }
-            
-            tweetScreenNameLabel?.text = "\(tweet.user)" // tweet.user.description
-            
-            if let profileImageURL = tweet.user.profileImageURL {
-                if let imageData = NSData(contentsOfURL: profileImageURL) { // blocks main thread!
-                    tweetProfileImageView?.image = UIImage(data: imageData)
-                }
-            }
+        }
+    }
+}
+
+private extension NSMutableAttributedString {
+    
+    func setKeywordColor(keywords: [Tweet.IndexedKeyword], color: UIColor) {
+        for keyword in keywords {
+            addAttribute(NSForegroundColorAttributeName, value: color, range: keyword.nsrange)
         }
     }
 }

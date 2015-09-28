@@ -59,7 +59,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func refresh(sender: UIRefreshControl?) {
         
-        guard searchText != nil else {
+        guard let _ = searchText else {
             return
         }
         if let request = nextRequestToAttempt {
