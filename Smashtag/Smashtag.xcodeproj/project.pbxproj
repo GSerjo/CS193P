@@ -18,6 +18,8 @@
 		B2A1219D1BB83EA00069600F /* TwitterRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A121991BB83EA00069600F /* TwitterRequest.swift */; };
 		B2A1219E1BB83EA00069600F /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A1219A1BB83EA00069600F /* User.swift */; };
 		B2A121A11BB84CB90069600F /* TweetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2A121A01BB84CB90069600F /* TweetTableViewCell.swift */; };
+		B2EC05381BD5C17500355B36 /* ImageTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EC05371BD5C17500355B36 /* ImageTableViewCell.swift */; };
+		B2EC053A1BD5C21D00355B36 /* MentionsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B2EC05391BD5C21D00355B36 /* MentionsTableViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +36,8 @@
 		B2A121991BB83EA00069600F /* TwitterRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TwitterRequest.swift; sourceTree = "<group>"; };
 		B2A1219A1BB83EA00069600F /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		B2A121A01BB84CB90069600F /* TweetTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TweetTableViewCell.swift; sourceTree = "<group>"; };
+		B2EC05371BD5C17500355B36 /* ImageTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageTableViewCell.swift; sourceTree = "<group>"; };
+		B2EC05391BD5C21D00355B36 /* MentionsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MentionsTableViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,6 +79,8 @@
 				B2A121881BB83BEF0069600F /* LaunchScreen.storyboard */,
 				B2A1218B1BB83BEF0069600F /* Info.plist */,
 				B2A121911BB83C7A0069600F /* TweetTableViewController.swift */,
+				B2EC05371BD5C17500355B36 /* ImageTableViewCell.swift */,
+				B2EC05391BD5C21D00355B36 /* MentionsTableViewController.swift */,
 			);
 			path = Smashtag;
 			sourceTree = "<group>";
@@ -164,6 +170,8 @@
 				B2A121921BB83C7A0069600F /* TweetTableViewController.swift in Sources */,
 				B2A1219C1BB83EA00069600F /* Tweet.swift in Sources */,
 				B2A1219B1BB83EA00069600F /* MediaItem.swift in Sources */,
+				B2EC05381BD5C17500355B36 /* ImageTableViewCell.swift in Sources */,
+				B2EC053A1BD5C21D00355B36 /* MentionsTableViewController.swift in Sources */,
 				B2A121821BB83BEF0069600F /* ViewController.swift in Sources */,
 				B2A121801BB83BEF0069600F /* AppDelegate.swift in Sources */,
 				B2A1219D1BB83EA00069600F /* TwitterRequest.swift in Sources */,
@@ -326,6 +334,7 @@
 				B2A121901BB83BEF0069600F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
