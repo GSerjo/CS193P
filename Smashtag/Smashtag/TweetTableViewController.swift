@@ -14,6 +14,7 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
     private struct Storyboard {
         static let CellReuseIndentifier = "Tweet"
+        static let MentionsSegueIdentifier = "ShowMentions"
     }
     
     var lastSuccessfullRequest: TwitterRequest?
@@ -55,6 +56,20 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
             searchText = textField.text
         }
         return true
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            switch identifier {
+            case Storyboard.MentionsSegueIdentifier:
+                if let cell = sender as? TweetTableViewCell {
+                    let controller = segue.destinationViewController as! MentionsTableViewController
+                    controller.tweet = cell.tweet
+                }
+            default:
+                break
+            }
+        }
     }
     
     @IBAction func refresh(sender: UIRefreshControl?) {
