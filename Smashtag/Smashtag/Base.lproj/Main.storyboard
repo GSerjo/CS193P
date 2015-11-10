@@ -125,6 +125,9 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="6xb-aQ-HhY">
                                             <rect key="frame" x="0.0" y="0.0" width="600" height="236"/>
                                         </imageView>
+                                        <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" fixedFrame="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TO1-eC-PlI">
+                                            <rect key="frame" x="290" y="108" width="20" height="20"/>
+                                        </activityIndicatorView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="6xb-aQ-HhY" firstAttribute="top" secondItem="ndd-zW-ynu" secondAttribute="top" id="5KL-gJ-rF2"/>
@@ -133,6 +136,10 @@
                                         <constraint firstAttribute="trailing" secondItem="6xb-aQ-HhY" secondAttribute="trailing" id="ame-WO-PI5"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="spinner" destination="TO1-eC-PlI" id="7kT-9q-5Ej"/>
+                                    <outlet property="tweetImage" destination="6xb-aQ-HhY" id="flk-ll-Y3K"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
