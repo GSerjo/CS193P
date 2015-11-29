@@ -40,6 +40,8 @@ class MentionsTableViewController: UITableViewController {
     private struct Storyboard {
         static let KeywordCellReuseIndentifier = "KeywordCell"
         static let ImageCellReuseIndentifier = "ImageCell"
+        
+        static let FromKeywordIdentifier = "FromKeyword"
     }
     
     private var mentionTypes: [MentionType] = []
@@ -73,6 +75,18 @@ class MentionsTableViewController: UITableViewController {
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier {
+            if identifier == Storyboard.FromKeywordIdentifier {
+                if let controller = segue.destinationViewController as? TweetTableViewController{
+                    if let cell = sender as? UITableViewCell {
+                        controller.searchText = cell.textLabel?.text
+                    }
+                }
+            }
+        }
     }
 
     // MARK: - Table view data source
