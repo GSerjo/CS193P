@@ -42,6 +42,7 @@ class MentionsTableViewController: UITableViewController {
         static let ImageCellReuseIndentifier = "ImageCell"
         
         static let FromKeywordIdentifier = "FromKeyword"
+        static let ImageIdentifier = "ShowImage"
     }
     
     private var mentionTypes: [MentionType] = []
@@ -80,13 +81,34 @@ class MentionsTableViewController: UITableViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let identifier = segue.identifier {
             if identifier == Storyboard.FromKeywordIdentifier {
-                if let controller = segue.destinationViewController as? TweetTableViewController{
+                if let controller = segue.destinationViewController as? TweetTableViewController {
                     if let cell = sender as? UITableViewCell {
                         controller.searchText = cell.textLabel?.text
                     }
                 }
+            } else if identifier == Storyboard.ImageIdentifier {
+                if let controller = segue.destinationViewController as? ImageViewController {
+                    if let cell = sender as? ImageTableViewCell {
+                        controller.imageURL = cell.imageUrl
+                        controller.title = title
+                    }
+                }
             }
         }
+    }
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String, sender: AnyObject?) -> Bool {
+        if identifier == Storyboard.FromKeywordIdentifier {
+            if let cell = sender as? UITableViewCell {
+                if let url = cell.textLabel?.text {
+                    if(url.hasPrefix("http")){
+                        UIApplication.sharedApplication().openURL(NSURL(string: url)!)
+                        return false
+                    }
+                }
+            }
+        }
+        return true
     }
 
     // MARK: - Table view data source

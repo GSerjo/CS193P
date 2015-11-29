@@ -98,14 +98,14 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <textField key="tableHeaderView" opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" id="ekj-Bd-zyn">
-                            <rect key="frame" x="0.0" y="64" width="600" height="30"/>
+                            <rect key="frame" x="0.0" y="0.0" width="600" height="30"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             <fontDescription key="fontDescription" type="system" pointSize="14"/>
                             <textInputTraits key="textInputTraits" keyboardType="twitter"/>
                         </textField>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="Tweet" rowHeight="144" id="Tfv-kI-eeD" customClass="TweetTableViewCell" customModule="Smashtag" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="122" width="600" height="144"/>
+                                <rect key="frame" x="0.0" y="58" width="600" height="144"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tfv-kI-eeD" id="0Qg-2y-AvW">
                                     <rect key="frame" x="0.0" y="0.0" width="567" height="143"/>
@@ -147,6 +147,7 @@
                                     <outlet property="tweetProfileImageView" destination="DuL-f2-nME" id="hfv-BZ-M0a"/>
                                     <outlet property="tweetScreenNameLabel" destination="EJh-Gs-Z7J" id="vbk-VW-udQ"/>
                                     <outlet property="tweetTextLabel" destination="CS4-Np-3Dg" id="Iaj-vV-ZTJ"/>
+                                    <segue destination="PwH-Yf-aSw" kind="show" identifier="ShowMentions" id="YFk-Ky-k6z"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -170,7 +171,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="41N-9v-2q8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2929" y="246"/>
+            <point key="canvasLocation" x="2937" y="246"/>
         </scene>
         <!--Mentions Table View Controller-->
         <scene sceneID="LHL-6G-8i5">
@@ -182,7 +183,7 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="KeywordCell" textLabel="X7h-H2-yMc" style="IBUITableViewCellStyleDefault" id="7nt-YC-T7d">
-                                <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                <rect key="frame" x="0.0" y="28" width="600" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7nt-YC-T7d" id="zEm-J6-hjg">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
@@ -202,7 +203,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ImageCell" rowHeight="236" id="HXA-Hx-OcI" customClass="ImageTableViewCell" customModule="Smashtag" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="136" width="600" height="236"/>
+                                <rect key="frame" x="0.0" y="72" width="600" height="236"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="HXA-Hx-OcI" id="ndd-zW-ynu">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="235"/>
@@ -225,6 +226,7 @@
                                 <connections>
                                     <outlet property="spinner" destination="TO1-eC-PlI" id="7kT-9q-5Ej"/>
                                     <outlet property="tweetImage" destination="6xb-aQ-HhY" id="flk-ll-Y3K"/>
+                                    <segue destination="RO5-TQ-z6P" kind="show" identifier="ShowImage" id="MFh-bt-2MB"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -256,5 +258,46 @@
             </objects>
             <point key="canvasLocation" x="748" y="246"/>
         </scene>
+        <!--Image View Controller-->
+        <scene sceneID="RrF-IZ-hgU">
+            <objects>
+                <viewController id="RO5-TQ-z6P" customClass="ImageViewController" customModule="Cassini" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Iiw-l2-Dao"/>
+                        <viewControllerLayoutGuide type="bottom" id="POl-fd-4q3"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ndC-Ji-NhK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="P3x-Hm-1FT">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                            </scrollView>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="X6e-If-EMK">
+                                <rect key="frame" x="290" y="290" width="20" height="20"/>
+                            </activityIndicatorView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="P3x-Hm-1FT" firstAttribute="leading" secondItem="ndC-Ji-NhK" secondAttribute="leading" id="54F-GB-kiG"/>
+                            <constraint firstAttribute="centerX" secondItem="X6e-If-EMK" secondAttribute="centerX" id="Sov-5v-p1w"/>
+                            <constraint firstAttribute="trailing" secondItem="P3x-Hm-1FT" secondAttribute="trailing" id="lkg-uW-TyN"/>
+                            <constraint firstItem="P3x-Hm-1FT" firstAttribute="top" secondItem="ndC-Ji-NhK" secondAttribute="top" id="tTW-2q-cBI"/>
+                            <constraint firstItem="P3x-Hm-1FT" firstAttribute="bottom" secondItem="POl-fd-4q3" secondAttribute="top" id="xzs-3A-oAs"/>
+                            <constraint firstAttribute="centerY" secondItem="X6e-If-EMK" secondAttribute="centerY" id="y0v-rE-2UK"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="scrollView" destination="P3x-Hm-1FT" id="3OV-A1-ebQ"/>
+                        <outlet property="spinner" destination="X6e-If-EMK" id="5Wr-1E-Sy0"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="63e-r6-Wmg" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2234" y="982"/>
+        </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="YFk-Ky-k6z"/>
+    </inferredMetricsTieBreakers>
 </document>
