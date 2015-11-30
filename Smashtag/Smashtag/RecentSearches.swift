@@ -26,4 +26,24 @@ final class RecentSearches {
         }
     }
     
+    func add (search: String) {
+        var currectSearch = searches
+        
+        if let index = currectSearch.indexOf(search) {
+            currectSearch.removeAtIndex(index)
+        }
+        
+        currectSearch.insert(search, atIndex: 0)
+        if(currectSearch.count > Constants.MaxSearches){
+            currectSearch.removeLast()
+        }
+        searches = currectSearch
+    }
+    
+    func removeAtIndex(index: Int) {
+        var currentSearch = searches
+        currentSearch.removeAtIndex(index)
+        searches = currentSearch
+    }
+    
 }

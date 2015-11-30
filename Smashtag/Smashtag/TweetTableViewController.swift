@@ -74,9 +74,10 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
     
     @IBAction func refresh(sender: UIRefreshControl?) {
         
-        guard let _ = searchText else {
+        guard let currentSearch = searchText else {
             return
         }
+        saveSearchText(currentSearch)
         if let request = nextRequestToAttempt {
             self.lastSuccessfullRequest = request
             request.fetchTweets { newTweets -> Void in
@@ -103,6 +104,10 @@ class TweetTableViewController: UITableViewController, UITextFieldDelegate {
             refreshControl?.beginRefreshing()
         }
         refresh(refreshControl)
+    }
+    
+    private func saveSearchText(search: String) {
+        RecentSearches().add(search)
     }
     
     override func viewDidLoad() {
