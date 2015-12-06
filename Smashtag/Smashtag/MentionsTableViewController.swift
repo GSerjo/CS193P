@@ -83,7 +83,12 @@ class MentionsTableViewController: UITableViewController {
             if identifier == Storyboard.FromKeywordIdentifier {
                 if let controller = segue.destinationViewController as? TweetTableViewController {
                     if let cell = sender as? UITableViewCell {
-                        controller.searchText = cell.textLabel?.text
+                        if var text = cell.textLabel?.text {
+                            if text.hasPrefix("@") {
+                              text += " OR from:" + text
+                            }
+                            controller.searchText = text
+                        }
                     }
                 }
             } else if identifier == Storyboard.ImageIdentifier {
